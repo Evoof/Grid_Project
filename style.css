@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
     padding: 64px 0;
 }
-.navbar .bar {
+.bar1,.bar2,.bar3 {
     background-color: black;
     height: 4px;
     width: 36px;
@@ -42,6 +42,9 @@ body {
 }
 .navbar .hamburger {
     display: none;
+}
+.navbar .hamburger:hover {
+    cursor: pointer;
 } 
 .project-grid {
     display: grid;
@@ -176,4 +179,70 @@ body {
 .footer {
     text-align: center;
     padding: 64px;
+}
+.animateBar1 {
+    animation: flipbar1 0.5s;
+    animation-fill-mode: forwards;
+}
+.animateBar2 {
+    animation: fadebar2 0.5s;
+    animation-fill-mode: forwards;
+}
+.animateBar3 {
+    animation: flipbar2 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipbar1 {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(45deg) translate(4px, 10px);
+    }
+}
+@keyframes flipbar2 {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-45deg) translate(4px, -10px);
+    }
+}
+@keyframes fadebar2 {
+    from{
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+.mobilenavbar {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    transition: transform 0.5s;
+}
+.mobilenavbar a {
+    text-decoration: none;
+    color: black;
+    margin: 16px 0;
+}
+.mobilenavbar a:hover {
+    text-decoration: underline;
+}
+.opendrawer {
+    transform: translateX(180px);
 }
